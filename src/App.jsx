@@ -1,3 +1,4 @@
+// goerli
 import React, { useState, useEffect } from "react"
 import { ethers } from "ethers"
 import alchemylogo from "./alchemylogo.svg"
@@ -9,9 +10,9 @@ const App = () => {
   const [isConnected, setIsConnected] = useState(false)
   const [myAddr, setMyAddr] = useState("")
   const [recipientAddr, setRecipientAddr] = useState("")
-  const contractAddress = "0x7f2C4072861A4d8E41809BaF1459361b3C28387B"
+  const contractAddress = "0x892a25cBcbA3CFA34c6B4a49dAa908B0bf670676"
   const contractABI = abi.abi
-  const [balance, setBalance] = useState(0)
+  const [balance, setBalance] = useState("")
   // const [amount, setAmount] = useState(0)
 
   useEffect(() => {
@@ -75,7 +76,7 @@ const App = () => {
           {hasMetamask ? (isConnected ? "Connected " + String(myAddr).substring(0, 6) + "..." + String(myAddr).substring(38) : "Connect MetaMask") : "Please install MetaMask"}
         </button>
 
-        <h2 style={{ paddingTop: "50px" }}>My Balance in Hardhat Token :</h2>
+        <h2 style={{ paddingTop: "50px" }}>Balance of my Hardhat Token :</h2>
         <p>{balance}</p>
 
         <h2 style={{ paddingTop: "18px" }}>Recipient Wallet Address :</h2>
